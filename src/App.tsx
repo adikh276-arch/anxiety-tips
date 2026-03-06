@@ -11,14 +11,17 @@ import Mindfulness from "./pages/tips/Mindfulness";
 import MuscleRelaxation from "./pages/tips/MuscleRelaxation";
 import PositiveSelfTalk from "./pages/tips/PositiveSelfTalk";
 
+import LanguageSelector from "./components/LanguageSelector";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <LanguageSelector />
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/anxiety_tips">
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tip/seek-support" element={<SeekSupport />} />

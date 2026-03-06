@@ -1,16 +1,21 @@
 import TipDetailLayout from "@/components/TipDetailLayout";
+import { useTranslation } from "react-i18next";
 
-const Mindfulness = () => (
-  <TipDetailLayout
-    title="Mindfulness"
-    whyItHelps="Anxiety often focuses on future fears. Mindfulness brings your attention back to the present moment."
-    whatYouCanDo={[
-      "Notice 5 things you can see",
-      "Notice 4 things you can feel",
-      "Notice 3 things you can hear",
-      "Take one slow breath",
-    ]}
-  />
-);
+const Mindfulness = () => {
+  const { t } = useTranslation();
+
+  return (
+    <TipDetailLayout
+      title={t("tip_mindfulness")}
+      whyItHelps={t("mindfulness_why")}
+      whatYouCanDo={[
+        t("mindfulness_step1"),
+        t("mindfulness_step2"),
+        t("mindfulness_step3"),
+        t("mindfulness_step4"),
+      ]}
+    />
+  );
+};
 
 export default Mindfulness;

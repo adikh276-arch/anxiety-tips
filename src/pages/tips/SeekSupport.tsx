@@ -1,16 +1,21 @@
 import TipDetailLayout from "@/components/TipDetailLayout";
+import { useTranslation } from "react-i18next";
 
-const SeekSupport = () => (
-  <TipDetailLayout
-    title="Seek Support"
-    whyItHelps="Anxiety can make worries feel bigger than they are. Sharing them with someone trusted can reduce isolation and provide reassurance."
-    whatYouCanDo={[
-      "Call or text a friend",
-      "Share what's worrying you",
-      "Ask for perspective",
-      "Consider speaking with a counselor",
-    ]}
-  />
-);
+const SeekSupport = () => {
+  const { t } = useTranslation();
+
+  return (
+    <TipDetailLayout
+      title={t("tip_seek_support")}
+      whyItHelps={t("support_why")}
+      whatYouCanDo={[
+        t("support_step1"),
+        t("support_step2"),
+        t("support_step3"),
+        t("support_step4"),
+      ]}
+    />
+  );
+};
 
 export default SeekSupport;

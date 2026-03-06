@@ -1,17 +1,22 @@
 import TipDetailLayout from "@/components/TipDetailLayout";
+import { useTranslation } from "react-i18next";
 
-const MuscleRelaxation = () => (
-  <TipDetailLayout
-    title="Progressive Muscle Relaxation"
-    whyItHelps="Anxiety creates physical tension. Releasing muscles sends calming signals to your brain."
-    whatYouCanDo={[
-      "Clench fists for 5 seconds",
-      "Release slowly",
-      "Shrug shoulders tightly",
-      "Release",
-      "Move from toes to head",
-    ]}
-  />
-);
+const MuscleRelaxation = () => {
+  const { t } = useTranslation();
+
+  return (
+    <TipDetailLayout
+      title={t("tip_muscle_relaxation")}
+      whyItHelps={t("muscle_why")}
+      whatYouCanDo={[
+        t("muscle_step1"),
+        t("muscle_step2"),
+        t("muscle_step3"),
+        t("muscle_step4"),
+        t("muscle_step5"),
+      ]}
+    />
+  );
+};
 
 export default MuscleRelaxation;
