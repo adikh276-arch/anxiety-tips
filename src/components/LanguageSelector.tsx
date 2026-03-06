@@ -36,7 +36,11 @@ const LanguageSelector = () => {
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         localStorage.setItem("language", lng);
-        // Update URL if needed, but not required by default for persistence
+
+        // Update URL with the selected language
+        const url = new URL(window.location.href);
+        url.searchParams.set("lang", lng);
+        window.history.pushState({}, "", url.toString());
     };
 
     return (
